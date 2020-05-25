@@ -10,7 +10,7 @@
     />
   </head>
   <body>
-    <div>
+    <div class="hangman">
       <div id="puzzle" class="puzzle"></div>
       <p id="guesses"></p>
       <button id="reset" class="button">Reset</button>
@@ -18,12 +18,13 @@
 
     <br />
 
-    <input class="input" placeholder="Tap on the virtual keyboard to start" />
-
-    <div class="simple-keyboard"></div>
+    <div>
+      <input class="input" placeholder="Tap on the virtual keyboard to start" />
+      <div class="simple-keyboard"></div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.min.js"></script>
-    <script src="src/index.js"></script>
+    <script src="./scripts/index.js"></script>
     <script src="./scripts/requests.js"></script>
     <script src="./scripts/hangman.js"></script>
     <script src="./scripts/app.js"></script>

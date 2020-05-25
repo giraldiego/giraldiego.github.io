@@ -9,7 +9,7 @@ const render = () => {
 
   let txt = '';
   game1.puzzle.split('').forEach((letter) => {
-    txt += `<span>${letter}</span>`;
+    txt += `<span class="puzzle-span">${letter}</span>`;
   });
   puzzleEl.innerHTML = txt;
 };
