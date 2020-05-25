@@ -2,7 +2,14 @@
 <html>
   <head>
     <title>The Hangman Game</title>
-    <link href="./styles/styles.css" rel="stylesheet" />
+
+    <!-- Responsive meta tag -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- <link href="./styles/styles.css" rel="stylesheet" /> -->
     <link rel="icon" href="./images/favicon.png" />
     <link
       rel="stylesheet"
@@ -11,18 +18,18 @@
   </head>
   <body>
     <div class="hangman">
-      <div id="puzzle" class="puzzle"></div>
+      <div id="puzzle"></div>
       <p id="guesses"></p>
       <button id="reset" class="button">Reset</button>
     </div>
 
     <div>
-      <!-- <input class="input" placeholder="Tap on the virtual keyboard to start" /> -->
+      <input class="input" placeholder="Tap on the virtual keyboard to start" />
       <div class="simple-keyboard"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.min.js"></script>
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/keyboard.js"></script>
     <script src="./scripts/requests.js"></script>
     <script src="./scripts/hangman.js"></script>
     <script src="./scripts/app.js"></script>
