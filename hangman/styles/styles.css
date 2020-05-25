@@ -1,12 +1,12 @@
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* html {
+html {
   font-size: 62.5%;
-} */
+}
 
 .hangman {
   background: #2b292e;
@@ -60,4 +60,4 @@ p {
 
 .button:hover {
   background: #5f3a87;
-}
+} */

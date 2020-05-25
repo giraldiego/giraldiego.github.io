@@ -1,27 +1,15 @@
 let Keyboard = window.SimpleKeyboard.default;
 
 let keyboard = new Keyboard({
-  //onChange: (input) => onChange(input),
+  onChange: (input) => onChange(input),
   onKeyPress: (button) => onKeyPress(button),
   mergeDisplay: true,
   layoutName: 'default',
   layout: {
-    default: [
-      'q w e r t y u i o p',
-      'a s d f g h j k l',
-      'z x c v b n m',
-      //'{shift} z x c v b n m {backspace}',
-      '',
-    ],
+    default: ['q w e r t y u i o p', 'a s d f g h j k l', 'z x c v b n m'],
     shift: [],
-    // [
-    //   'Q W E R T Y U I O P',
-    //   'A S D F G H J K L',
-    //   '{shift} Z X C V B N M {backspace}',
-    //   '{numbers} {space} {ent}',
-    // ],
+
     numbers: [],
-    //['1 2 3', '4 5 6', '7 8 9', '{abc} 0 {backspace}'],
   },
   display: {
     '{numbers}': '123',
@@ -48,38 +36,18 @@ let keyboard = new Keyboard({
 //   keyboard.setInput(event.target.value);
 // });
 
-//console.log(keyboard);
-
 function onChange(input) {
-  // document.querySelector('.input').value = input;
-  // console.log('Input changed', input);
+  //document.querySelector('.input').value = input.toUpperCase();
+  // console.log(input);
+  // document.querySelector('.input').value += input
+  //   .charAt(input.length - 1)
+  //   .toUpperCase();
 }
 
 function onKeyPress(button) {
-  game1.makeGuess(button);
-  render();
-  /**
-  console.log('Button pressed', button);
-*
-  *
-   * If you want to handle the shift and caps lock buttons
-   */
-  // if (button === '{shift}' || button === '{lock}') handleShift();
-  // if (button === '{numbers}' || button === '{abc}') handleNumbers();
+  checkKey(button);
 }
 
-function handleShift() {
-  // let currentLayout = keyboard.options.layoutName;
-  // let shiftToggle = currentLayout === 'default' ? 'shift' : 'default';
-  // keyboard.setOptions({
-  //   layoutName: shiftToggle,
-  // });
-}
+function handleShift() {}
 
-function handleNumbers() {
-  // let currentLayout = keyboard.options.layoutName;
-  // let numbersToggle = currentLayout !== 'numbers' ? 'numbers' : 'default';
-  // keyboard.setOptions({
-  //   layoutName: numbersToggle,
-  // });
-}
+function handleNumbers() {}

@@ -40,13 +40,17 @@ class Hangman {
         ? (puzzle += letter)
         : (puzzle += '*');
     });
-    //console.log(this.guessedLetters);
+
     return puzzle;
   }
 
   makeGuess(guess) {
     if (this.status !== 'playing') {
-      return;
+      return false;
+    }
+
+    if (!guess.match(/^[A-Za-z]+$/)) {
+      return false;
     }
 
     guess.toLowerCase();
@@ -55,6 +59,8 @@ class Hangman {
 
     if (isUnique) {
       this.guessedLetters.push(guess);
+    } else {
+      return false;
     }
 
     if (isUnique && isBadGuess) {
@@ -64,5 +70,6 @@ class Hangman {
       );
     }
     this.calculateStatus();
+    return true;
   }
 }
