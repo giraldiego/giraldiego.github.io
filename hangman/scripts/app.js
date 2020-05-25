@@ -28,4 +28,8 @@ window.addEventListener('keypress', (e) => {
   render();
 });
 
+window.addEventListener('input', (event) => {
+  console.log(event);
+});
+
 startGame();

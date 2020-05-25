@@ -8,7 +8,7 @@
   font-size: 62.5%;
 } */
 
-body {
+.hangman {
   background: #2b292e;
 
   display: flex;
