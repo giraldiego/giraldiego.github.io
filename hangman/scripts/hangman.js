@@ -11,7 +11,7 @@ class Hangman {
       return `Guesses left: ${this.remainingGuesses}`;
     } else if (this.status === 'failed') {
       console.log('---Game failed---');
-      return `Nice try! The word was ${this.word.join('')}`;
+      return `Nice try! The word was "${this.word.join('')}"`;
     } else {
       console.log('---Game won---');
       return `Great work! You guessed the word`;
