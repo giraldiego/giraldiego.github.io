@@ -65,11 +65,12 @@ class Hangman {
 
     if (isUnique && isBadGuess) {
       this.remainingGuesses -= 1;
-      console.log(
-        `You missed '${guess}', now you have ${this.remainingGuesses} guesses left`
-      );
+      // console.log(
+      //   `You missed '${guess}', now you have ${this.remainingGuesses} guesses left`
+      // );
+      this.calculateStatus();
+      return true;
     }
-    this.calculateStatus();
-    return true;
+    return false;
   }
 }

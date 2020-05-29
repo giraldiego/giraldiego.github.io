@@ -3,6 +3,7 @@ const guessesEl = document.querySelector('#guesses');
 const inputEl = document.querySelector('.input');
 
 let game1;
+let words = '2';
 
 const render = () => {
   puzzleEl.innerHTML = '';
@@ -20,7 +21,7 @@ const render = () => {
 };
 
 const startGame = async () => {
-  const puzzle = await getPuzzle('2');
+  const puzzle = await getPuzzle(words);
   game1 = new Hangman(puzzle, 5);
   render();
   inputEl.value = '';
@@ -29,14 +30,20 @@ const startGame = async () => {
 const checkKey = (guess) => {
   if (game1.makeGuess(guess)) {
     document.querySelector('.input').value += guess.toUpperCase();
-    render();
   }
+  render();
 };
 
 document.querySelector('#reset').addEventListener('click', startGame);
 
 window.addEventListener('keypress', (e) => {
   checkKey(String.fromCharCode(e.charCode));
+});
+
+document.querySelector('#words').addEventListener('change', (e) => {
+  words = e.target.value;
+  //console.log(words);
+  startGame();
 });
 
 startGame();

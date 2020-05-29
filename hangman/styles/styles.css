@@ -8,6 +8,15 @@
   font-size: 62.5%;
 } */
 
+@media (min-width: 1025px) {
+  .simple-keyboard {
+    display: none;
+  }
+  .input {
+    display: none;
+  }
+}
+
 body {
   background: #2b292e;
   display: flex;
@@ -17,6 +26,12 @@ body {
 p {
   font-weight: 300;
   margin-bottom: 0.8rem;
+}
+
+.labelText {
+  color: #fafafa;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1rem;
 }
 
 .hangman-game {
@@ -64,6 +79,10 @@ p {
 
 .button:hover {
   background: #5f3a87;
+}
+
+.separator {
+  margin: 10px;
 }
 
 .simple-keyboard {
