@@ -14,7 +14,7 @@ class Hangman {
       return `Nice try! The words were < ${this.word.join('')} >`;
     } else {
       //console.log('---Game won---');
-      return `Great work! You guessed the word`;
+      return `Great work! You guessed the words`;
     }
   }
 
