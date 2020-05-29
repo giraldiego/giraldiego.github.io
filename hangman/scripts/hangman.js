@@ -10,10 +10,10 @@ class Hangman {
     if (this.status === 'playing') {
       return `Guesses left: ${this.remainingGuesses}`;
     } else if (this.status === 'failed') {
-      console.log('---Game failed---');
-      return `Nice try! The word was "${this.word.join('')}"`;
+      //console.log('---Game failed---');
+      return `Nice try! The words were < ${this.word.join('')} >`;
     } else {
-      console.log('---Game won---');
+      //console.log('---Game won---');
       return `Great work! You guessed the word`;
     }
   }
@@ -45,12 +45,13 @@ class Hangman {
   }
 
   makeGuess(guess) {
+    let logLetter = false;
     if (this.status !== 'playing') {
-      return false;
+      return logLetter;
     }
 
     if (!guess.match(/^[A-Za-z]+$/)) {
-      return false;
+      return logLetter;
     }
 
     guess.toLowerCase();
@@ -60,17 +61,14 @@ class Hangman {
     if (isUnique) {
       this.guessedLetters.push(guess);
     } else {
-      return false;
+      return logLetter;
     }
 
     if (isUnique && isBadGuess) {
       this.remainingGuesses -= 1;
-      // console.log(
-      //   `You missed '${guess}', now you have ${this.remainingGuesses} guesses left`
-      // );
-      this.calculateStatus();
-      return true;
+      logLetter = true;
     }
-    return false;
+    this.calculateStatus();
+    return logLetter;
   }
 }
