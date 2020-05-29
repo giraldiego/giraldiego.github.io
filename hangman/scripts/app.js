@@ -3,7 +3,7 @@ const guessesEl = document.querySelector('#guesses');
 const inputEl = document.querySelector('.input');
 
 let game1;
-let words = '2';
+let words = '3';
 
 const render = () => {
   puzzleEl.innerHTML = '';
