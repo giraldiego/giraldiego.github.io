@@ -17,33 +17,37 @@
     />
   </head>
   <body>
-    <div class="hangman-game">
-      <div id="puzzle" class="puzzle"></div>
-      <p id="guesses"></p>
-      <button id="reset" class="button">Reset</button>
-      <div class="separator"></div>
-
-      <label class="labelText">
-        How many words (default: 3)?
-        <select id="words">
+    <div>
+      <div class="hangman-game">
+        <div id="puzzle" class="puzzle"></div>
+        <p id="guesses"></p>
+        <button id="reset" class="button">Reset</button>
+        <div class="separator"></div>
+      </div>
+      <div class="setup">
+        <label for="words" class="labelText">
+          How many words (default: 3)?
+        </label>
+        <select name="words" id="words">
           <option value="">--Choose an option--</option>
           <option value="2">two words</option>
           <option value="3">three words!</option>
           <option value="4">four words!!</option>
           <option value="5">five words!!!</option>
         </select>
-      </label>
+      </div>
     </div>
 
-    <div>
-      <label class="labelText">
+    <div class="mobile-input">
+      <label for="wrong-letters" class="labelText">
         Wrong letters:
-        <input
-          class="input"
-          placeholder="Tap on the virtual keyboard"
-          readonly
-        />
       </label>
+      <input
+        name="wrong-letters"
+        class="input"
+        placeholder="Tap on the virtual keyboard"
+        readonly
+      />
 
       <div class="simple-keyboard"></div>
     </div>

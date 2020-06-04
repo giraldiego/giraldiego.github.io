@@ -9,11 +9,11 @@ const render = () => {
   puzzleEl.innerHTML = '';
   guessesEl.textContent = game1.statusMsg;
 
-  let txt = `<div>`;
+  let txt = `<div class="word">`;
   game1.puzzle.split('').forEach((letter) => {
     txt += `<span class="puzzle-span">${letter}</span>`;
     if (letter === ' ') {
-      txt += `</div><div>`;
+      txt += `</div><div class="word">`;
     }
   });
   txt += `</div>`;
